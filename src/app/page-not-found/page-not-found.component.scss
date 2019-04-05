@@ -1,0 +1,27 @@
+@import '../../scss/variables';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+
+  h1 {
+    font-size: 70px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    line-height: 90px;
+  }
+
+  h2 {
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+}
