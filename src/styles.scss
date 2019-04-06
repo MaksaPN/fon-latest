@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@import url( 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import './scss/variables';
 
@@ -12,4 +12,9 @@ body {
   * {
     box-sizing: border-box;
   }
+}
+
+.mat-button,
+.mat-card {
+  font-family: 'Open Sans', sans-serif;
 }
