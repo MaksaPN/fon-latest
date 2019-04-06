@@ -1,4 +1,10 @@
-<mat-card *ngFor="let newsItem of newsList">
+<form class="search-form">
+  <mat-form-field>
+    <input matInput name="search" placeholder="Search" [(ngModel)]="searchTerm" (ngModelChange)="filterList($event)">
+  </mat-form-field>
+</form>
+
+<mat-card *ngFor="let newsItem of filteredNewsList">
 
   <mat-card-header>
     <mat-card-title>{{ newsItem.title }}</mat-card-title>
