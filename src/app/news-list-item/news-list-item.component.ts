@@ -11,7 +11,7 @@ import { NewsService } from '../shared/services/news.service';
 })
 export class NewsListItemComponent implements OnInit {
 
-  newsItem: News;
+  newsItem: News = {} as News;
   error: string;
 
   constructor(

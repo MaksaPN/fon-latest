@@ -1,0 +1,22 @@
+@import '../../scss/variables';
+
+:host {
+  display: block;
+}
+
+.content,
+.description,
+.news-footer,
+.news-header {
+  padding: 30px;
+}
+
+.news-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid $light-blue;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
