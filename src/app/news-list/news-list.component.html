@@ -1,26 +1,6 @@
-<form class="search-form">
-  <mat-form-field>
-    <input matInput name="search" placeholder="Search" [(ngModel)]="searchTerm" (ngModelChange)="filterList($event)">
-  </mat-form-field>
-</form>
+<fon-search (searchTermChanged)="filterList($event)"></fon-search>
 
-<mat-card *ngFor="let newsItem of filteredNewsList">
-
-  <mat-card-header>
-    <mat-card-title>{{ newsItem.title }}</mat-card-title>
-    <mat-card-subtitle>{{ newsItem.author }}</mat-card-subtitle>
-  </mat-card-header>
-
-  <img mat-card-image [src]="newsItem.urlToImage" alt="newsItem.title">
-
-  <mat-card-content>
-    <p>Published at: {{ newsItem.publishedAt | date:'medium' }}</p>
-  </mat-card-content>
-
-  <mat-card-actions>
-    <a mat-button routerLink="/news/{{newsItem.id}}">
-      Read full story
-    </a>
-  </mat-card-actions>
-
-</mat-card>
+<fon-news-list-item
+  *ngFor="let newsItem of filteredNewsList"
+  [newsItem]="newsItem">
+</fon-news-list-item>

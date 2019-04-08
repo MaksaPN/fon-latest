@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { News, NewsApiError } from '../shared/models/news';
-import { NewsService } from '../shared/services/news.service';
+import { NewsItem } from '../shared/models/news';
 
 @Component({
   selector: 'fon-news-list-item',
@@ -11,28 +9,12 @@ import { NewsService } from '../shared/services/news.service';
 })
 export class NewsListItemComponent implements OnInit {
 
-  newsItem: News = {} as News;
+  @Input() newsItem: NewsItem = {} as NewsItem;
   error: string;
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private newsService: NewsService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
-      this.getNewsDetails(params.id);
-    });
   }
 
-  getNewsDetails(id: number) {
-    this.newsService.getNewsDetails(id).subscribe(
-      (newsItem: News) => {
-        this.newsItem = newsItem;
-      },
-      (error: NewsApiError) => {
-        this.error = error.message;
-      }
-    );
-  }
 }

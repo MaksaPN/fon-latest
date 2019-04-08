@@ -2,21 +2,10 @@
 
 :host {
   display: block;
-}
+  width: 50%;
 
-.content,
-.description,
-.news-footer,
-.news-header {
-  padding: 30px;
-}
-
-.news-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid $light-blue;
-}
-
-img {
-  display: block;
-  width: 100%;
+  mat-card {
+    width: calc(100% - 20px);
+    margin: 10px;
+  }
 }

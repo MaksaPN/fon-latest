@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { NewsListItemComponent } from './news-list-item/news-list-item.component';
 import { NewsListComponent } from './news-list/news-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NewsComponent } from './news/news.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   imports: [
@@ -27,7 +29,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppComponent,
     NewsListComponent,
     NewsListItemComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NewsComponent,
+    SearchComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { News, NewsApiError } from '../shared/models/news';
+import { NewsItem, NewsApiError } from '../shared/models/news';
 import { NewsService } from '../shared/services/news.service';
 
 @Component({
@@ -10,17 +10,16 @@ import { NewsService } from '../shared/services/news.service';
 })
 export class NewsListComponent implements OnInit {
 
-  newsList: News[] = [];
-  filteredNewsList: News[] = [];
+  newsList: NewsItem[] = [];
+  filteredNewsList: NewsItem[] = [];
 
-  searchTerm: string;
   error: string;
 
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
     this.newsService.getAllNews().subscribe(
-      (newsList: News[]) => {
+      (newsList: NewsItem[]) => {
         this.newsList = newsList;
         this.filteredNewsList = newsList;
       },
